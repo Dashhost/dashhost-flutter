@@ -109,6 +109,50 @@ class DashDevToolsImpl implements DashDevToolsInterface {
           const existing = document.getElementById("dash-devtools-overlay");
           if (existing) existing.remove();
       }
+
+      function addToggle() {
+        const container = document.createElement("div");
+        document.body.appendChild(container);
+
+        Object.assign(container.style, {
+            position: "fixed",
+            top: "10px",
+            right: "10px",
+            background: "white",
+            padding: "5px 10px",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px"
+        });
+
+
+        const label = document.createElement("label");
+        label.textContent = "Overlay"; // Add space for better click target
+        container.appendChild(label);
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = true;
+
+        label.prepend(checkbox);
+
+        checkbox.addEventListener("change", function() {
+          console.log(this.checked);
+          if(this.checked) {
+            document.getElementById('dash-devtools-overlay').style.display = 'block';
+          } else {
+            document.getElementById('dash-devtools-overlay').style.display = 'none';
+          }
+        });
+
+
+      }
+
+      addToggle();
+
     ''';
 
     document.body!.appendChild(script);
