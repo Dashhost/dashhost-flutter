@@ -9,7 +9,9 @@ class DashMetaTag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) => _recordMetaData(context));
+    if (DashRecorder().isEnabled()) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _recordMetaData(context));
+    }
 
     return const SizedBox.shrink();
   }

@@ -9,6 +9,10 @@ class DashBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!DashRecorder().isEnabled()) {
+      return SizedBox(child: child);
+    }
+
     return LayoutBuilder(
       builder: (context, constraints) {
         WidgetsBinding.instance.addPostFrameCallback((_) => _recordBoxData(context));

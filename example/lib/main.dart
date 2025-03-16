@@ -2,7 +2,7 @@ import 'package:dashhost_flutter/dashhost_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  DashDevTools().enable();
+  // DashDevTools().enable();
 
   runApp(const MyApp());
 }
