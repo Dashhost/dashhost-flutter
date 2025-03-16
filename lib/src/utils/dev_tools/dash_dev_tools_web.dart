@@ -128,7 +128,6 @@ class DashDevToolsImpl implements DashDevToolsInterface {
             gap: "5px"
         });
 
-
         const label = document.createElement("label");
         label.textContent = "Overlay"; // Add space for better click target
         container.appendChild(label);
@@ -140,15 +139,12 @@ class DashDevToolsImpl implements DashDevToolsInterface {
         label.prepend(checkbox);
 
         checkbox.addEventListener("change", function() {
-          console.log(this.checked);
           if(this.checked) {
             document.getElementById('dash-devtools-overlay').style.display = 'block';
           } else {
             document.getElementById('dash-devtools-overlay').style.display = 'none';
           }
         });
-
-
       }
 
       addToggle();
@@ -172,16 +168,20 @@ class DashDevToolsImpl implements DashDevToolsInterface {
       window.dashRecords = [];
 
       window.recordDashText = (data) => {
-        const d = JSON.parse(data);
-        console.log("text data", d);
-        window.dashRecords.push(d);
+          const d = JSON.parse(data);
+          window.dashRecords.push({...d, type: 'text'});
       }
 
-       window.recordDashBox = (data) => {
-        const d = JSON.parse(data);
-        console.log("box data", d);
-        window.dashRecords.push(d);
+      window.recordDashBox = (data) => {
+          const d = JSON.parse(data);
+          console.log(d);
+          window.dashRecords.push({...d, type: 'box'});
+      }
 
+       window.recordDashMetaTag = (data) => {
+          const d = JSON.parse(data);
+          console.log(d);
+          window.dashRecords.push({...d, type: 'metatag'});
       }
     ''';
 

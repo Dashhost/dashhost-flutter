@@ -2,6 +2,11 @@ import 'dash_recorder_interface.dart';
 
 class DashRecorderImpl implements DashRecorderInterface {
   @override
+  bool isEnabled() {
+    return false;
+  }
+
+  @override
   void recordDashBox(Map<String, dynamic> data) {
     return;
   }
@@ -12,7 +17,7 @@ class DashRecorderImpl implements DashRecorderInterface {
   }
 
   @override
-  bool isEnabled() {
-    return false;
+  void recordDashMetaData(Map<String, dynamic> data) {
+    return;
   }
 }

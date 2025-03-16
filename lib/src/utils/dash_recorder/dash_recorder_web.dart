@@ -6,6 +6,15 @@ import 'package:web/web.dart' as web;
 
 class DashRecorderImpl implements DashRecorderInterface {
   @override
+  bool isEnabled() {
+    final window = web.window;
+    if (window.hasProperty('dashRecordingEnabled'.toJS) == true.toJS) {
+      return window.getProperty('dashRecordingEnabled'.toJS) == true.toJS;
+    }
+    return false;
+  }
+
+  @override
   void recordDashText(Map<String, dynamic> data) {
     if (!isEnabled()) return;
     final window = web.window;
@@ -26,11 +35,12 @@ class DashRecorderImpl implements DashRecorderInterface {
   }
 
   @override
-  bool isEnabled() {
+  void recordDashMetaTag(Map<String, dynamic> data) {
+    if (!isEnabled()) return;
     final window = web.window;
-    if (window.hasProperty('dashRecordingEnabled'.toJS) == true.toJS) {
-      return window.getProperty('dashRecordingEnabled'.toJS) == true.toJS;
+
+    if (window.hasProperty('recordDashMetaTag'.toJS) == true.toJS) {
+      window.callMethod('recordDashMetaTag'.toJS, jsonEncode(data).toJS);
     }
-    return false;
   }
 }
