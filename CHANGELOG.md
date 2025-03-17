@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial Release of package
+* Provides `DashText`, `DashBox`, and `DashMetaTag` widgets
+* Includes Basic Dev Tools

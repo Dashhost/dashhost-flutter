@@ -6,10 +6,6 @@ Dashhost Flutter provides components for generating SEO in flutter web apps that
 * Wrap widgets in `DashBox` to provide semantic layout
 * Include `DashMetaTag` widgets to inject metatags to your page.
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
