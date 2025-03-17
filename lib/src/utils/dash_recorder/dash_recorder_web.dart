@@ -4,6 +4,8 @@ import 'dart:js_interop_unsafe';
 import 'dash_recorder_interface.dart';
 import 'package:web/web.dart' as web;
 
+/// Web implemention for **`DashRecorder`**
+/// This uses the web package to broadcast updates to the JS layer
 class DashRecorderImpl implements DashRecorderInterface {
   @override
   bool isEnabled() {

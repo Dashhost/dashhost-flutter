@@ -47,7 +47,7 @@ class DashDevToolsImpl implements DashDevToolsInterface {
       if (window.hasProperty('drawOverlay'.toJS) == true.toJS) {
         window.callMethod('drawOverlay'.toJS);
       } else {
-        print("Function 'drawOverlay' is not defined on window.");
+        debugPrint("Function 'drawOverlay' is not defined on window.");
       }
     }
   }
@@ -153,7 +153,6 @@ class DashDevToolsImpl implements DashDevToolsInterface {
 
     document.body!.appendChild(script);
     _isInjected = true;
-    print("Dashhost DevTools JS Injected!");
   }
 
   void _injectRecorderJS() {
