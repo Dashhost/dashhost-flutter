@@ -18,7 +18,6 @@ class DashText extends StatelessWidget {
   final TextHeightBehavior? textHeightBehavior;
 
   final String dashTag;
-  final int? dashTTL;
 
   const DashText(
     this.text, {
@@ -34,7 +33,6 @@ class DashText extends StatelessWidget {
     this.textWidthBasis,
     this.textHeightBehavior,
     this.dashTag = "p",
-    this.dashTTL,
     super.key,
   });
 
@@ -89,15 +87,7 @@ class DashText extends StatelessWidget {
       final width = renderBox.size.width;
       final height = renderBox.size.height;
 
-      final Map<String, dynamic> dashData = {
-        "x": offset.dx,
-        "y": offset.dy,
-        "width": width,
-        "height": height,
-        "text": text,
-        'dashTag': dashTag,
-        "dashTTL": dashTTL,
-      };
+      final Map<String, dynamic> dashData = {"x": offset.dx, "y": offset.dy, "width": width, "height": height, "text": text, 'dashTag': dashTag};
 
       DashRecorder().recordDashText(dashData);
     }

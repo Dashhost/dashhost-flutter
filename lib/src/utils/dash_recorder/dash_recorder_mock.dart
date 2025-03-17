@@ -17,7 +17,7 @@ class DashRecorderImpl implements DashRecorderInterface {
   }
 
   @override
-  void recordDashMetaData(Map<String, dynamic> data) {
+  void recordDashMetaTag(Map<String, dynamic> data) {
     return;
   }
 }

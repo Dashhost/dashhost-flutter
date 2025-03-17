@@ -1,22 +1,10 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Dashhost Flutter provides components for generating SEO in flutter web apps that [Dashhost](https://dashhost.app) can interpret and serve to bots and crawlers.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* Drop-in replacement for `Text` widget using `DashText`
+* Wrap widgets in `DashBox` to provide semantic layout
+* Include `DashMetaTag` widgets to inject metatags to your page.
 
 ## Getting started
 
@@ -25,15 +13,37 @@ start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 ```dart
-const like = 'sample';
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: DashText("Dashhost Coded Example", dashTag: "h1")),
+      body: Align(
+        alignment: Alignment.center,s
+        child: Column(
+          children: [
+            DashMetaTag.title("Dashhost Coded Example"),
+            DashMetaTag.description("Welcome to the Dashhost Flutter Coded Example"),
+            DashText("Welcome to the Dashhost Flutter Coded Example", dashTag: "h2"),
+          ],
+        ),
+      ),
+    );
+  }
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Dashhost Flutter also includes Dev Tools to preview how your page will be interpretted. You can enable them in the run function of your main.dart
+
+```dart
+void main() {
+  DashDevTools().enable();
+  runApp(const MyApp());
+}
+```
