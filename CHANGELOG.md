@@ -1,3 +1,11 @@
+## 0.0.5
+
+* Using web.Event for dispatch instead of depricated helper package
+
+## 0.0.4
+
+* Exposed the DashReady widget publicly
+* Ability to customize timeout delay
 
 ## 0.0.3
 

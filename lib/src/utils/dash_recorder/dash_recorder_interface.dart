@@ -14,5 +14,5 @@ abstract class DashRecorderInterface {
   void recordDashMetaTag(Map<String, dynamic> data);
 
   /// Method to tell dashhost the page is ready for capture
-  void readyToCapture();
+  void readyToCapture([int delay]);
 }

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:js_interop';
 import 'dart:js_interop_unsafe';
-import 'package:web/helpers.dart';
 
 import 'dash_recorder_interface.dart';
 import 'package:web/web.dart' as web;
@@ -49,10 +48,12 @@ class DashRecorderImpl implements DashRecorderInterface {
   }
 
   @override
-  void readyToCapture() {
+  void readyToCapture([int delay = 2000]) {
     if (!isEnabled()) return;
 
-    final window = web.window;
-    window.dispatchEvent(Event("dashReadyToCapture"));
+    Future.delayed(Duration(milliseconds: delay)).then((_) {
+      final window = web.window;
+      window.dispatchEvent(web.Event("dashReadyToCapture"));
+    });
   }
 }

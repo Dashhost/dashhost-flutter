@@ -24,7 +24,7 @@ class DashRecorderImpl implements DashRecorderInterface {
   }
 
   @override
-  void readyToCapture() {
+  void readyToCapture([int delay = 2000]) {
     return;
   }
 }
