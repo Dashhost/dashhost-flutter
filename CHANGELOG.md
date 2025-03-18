@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Updated metatag name of og:image to just image
+
 ## 0.0.5
 
 * Using web.Event for dispatch instead of depricated helper package

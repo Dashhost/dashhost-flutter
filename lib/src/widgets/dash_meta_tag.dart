@@ -38,6 +38,6 @@ class DashMetaTag extends StatelessWidget {
   }
 
   factory DashMetaTag.image(String value) {
-    return DashMetaTag(name: "og:image", value: value);
+    return DashMetaTag(name: "image", value: value);
   }
 }
