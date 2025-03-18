@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:js_interop';
 import 'dart:js_interop_unsafe';
+import 'package:web/helpers.dart';
+
 import 'dash_recorder_interface.dart';
 import 'package:web/web.dart' as web;
 
@@ -51,7 +53,6 @@ class DashRecorderImpl implements DashRecorderInterface {
     if (!isEnabled()) return;
 
     final window = web.window;
-
-    window.callMethod('dispatchEvent(new Event("dashReadyToCapture"))'.toJS);
+    window.dispatchEvent(Event("dashReadyToCapture"));
   }
 }
