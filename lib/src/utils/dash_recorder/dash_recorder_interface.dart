@@ -12,4 +12,7 @@ abstract class DashRecorderInterface {
 
   /// Method to record properties about a **`DashMetaTag`** widget
   void recordDashMetaTag(Map<String, dynamic> data);
+
+  /// Method to tell dashhost the page is ready for capture
+  void readyToCapture();
 }

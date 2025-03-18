@@ -22,4 +22,9 @@ class DashRecorderImpl implements DashRecorderInterface {
   void recordDashMetaTag(Map<String, dynamic> data) {
     return;
   }
+
+  @override
+  void readyToCapture() {
+    return;
+  }
 }

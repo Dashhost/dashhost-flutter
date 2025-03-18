@@ -26,6 +26,10 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      DashRecorder().readyToCapture();
+    });
+
     return Scaffold(
       appBar: AppBar(title: DashText("Dashhost Coded Example", dashTag: "h1")),
       body: Align(

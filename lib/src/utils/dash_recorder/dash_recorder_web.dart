@@ -45,4 +45,13 @@ class DashRecorderImpl implements DashRecorderInterface {
       window.callMethod('recordDashMetaTag'.toJS, jsonEncode(data).toJS);
     }
   }
+
+  @override
+  void readyToCapture() {
+    if (!isEnabled()) return;
+
+    final window = web.window;
+
+    window.callMethod('dispatchEvent(new Event("dashReadyToCapture"))'.toJS);
+  }
 }
